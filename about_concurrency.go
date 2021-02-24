@@ -24,7 +24,7 @@ func findPrimeNumbers(channel chan int) {
 func aboutConcurrency() {
 	ch := make(chan int)
 
-	assert(true) // concurrency can be almost trivial
+	// concurrency can be almost trivial
 	go findPrimeNumbers(ch)
 
 	assert(<-ch == 2)

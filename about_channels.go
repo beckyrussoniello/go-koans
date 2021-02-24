@@ -19,8 +19,7 @@ func aboutChannels() {
 		<-ch
 	}()
 
-	assert(true) // we'll need to make room for the queue, or suffer deadlocks
-
+	// we'll need to make room for the queue, or suffer deadlocks
 	ch <- "bar"   // this send will succeed
 	ch <- "quux"  // there's enough room for this send too
 	ch <- "extra" // but the buffer only has two slots
